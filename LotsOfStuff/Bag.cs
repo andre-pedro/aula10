@@ -27,6 +27,27 @@ namespace Aula10
             }
         }
 
+        public float Weight
+        {
+            get
+            {
+                float total = 0;
+                foreach (IStuff thing in stuff)
+                {
+                    if (thing != null)
+                    {
+                        total += thing.Weight;
+                    }
+                }
+                return total;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"O nº de items {StuffCount} com peso {Weight} e o Preço {Value}";
+        }
+
         /// <summary>Construtor que cria uma nova instância de mochila</summary>
         /// <param name="bagSize">Número máximo de itens que é possível colocar na mochila</param>
         public Bag(int bagSize)
