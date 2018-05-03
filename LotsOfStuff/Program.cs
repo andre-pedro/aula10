@@ -11,7 +11,7 @@ namespace Aula10
         public static void Main(string[] args)
         {
             // Criar uma nova instância de Program e
-            // invocar o método TestProjet na instância criada
+            // invocar o método TestProject na instância criada
             Program prog = new Program();
             prog.TestProject();
 
@@ -35,6 +35,8 @@ namespace Aula10
             p.BagOfStuff.AddThing(new Gun(1.5f, 0.050f, 10, 250));
             // 200 gramas de fruta fresca
             p.BagOfStuff.AddThing(new Food(FoodType.Fruit, 0, 0.200f));
+            // Pistola com 1.0kg + 25 gramas por bala, carregada com 5 balas, com um custo de 125€
+            p.BagOfStuff.AddThing(new Gun(1.0f, 0.025f, 5, 125));
 
             // Quantos itens tem o jogador na mochila?
             Console.WriteLine($"Nº de itens na mochila: {p.BagOfStuff.StuffCount}");
