@@ -11,6 +11,22 @@ namespace Aula10
         /// <summary>Número de itens na mochila</summary>
         public int StuffCount { get; private set; }
 
+        public float Value
+        {
+            get
+            {
+                float total = 0;
+                foreach (IStuff thing in stuff)
+                {
+                    if (thing != null)
+                    {
+                        total += thing.Value;
+                    }
+                }
+                return total;
+            }
+        }
+
         /// <summary>Construtor que cria uma nova instância de mochila</summary>
         /// <param name="bagSize">Número máximo de itens que é possível colocar na mochila</param>
         public Bag(int bagSize)
