@@ -15,6 +15,12 @@
         /// <summary> Propriedade Value, respeita o contrato com interface IValuable </summary>
         public float Value { get; }
 
+        //Kek
+        public override string ToString()
+        {
+            return $"Peso base: {baseWeight}, Peso das balas: {bulletWeight}, Preço: {Value}";
+        }
+
         /// <summary> Propriedade Weight respeita o contrato com IHasWeight </summary>
         public float Weight { get { return baseWeight + NumberOfBullets * bulletWeight; } }
 
