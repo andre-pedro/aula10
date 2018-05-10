@@ -18,7 +18,7 @@
         //Kek
         public override string ToString()
         {
-            return $"Peso base: {baseWeight}, Peso das balas: {bulletWeight}, Preço: {Value}";
+            return $"Peso base: {baseWeight:f2}, Peso das balas: {bulletWeight:f2}, Preço: {Value:c}";
         }
 
         /// <summary> Propriedade Weight respeita o contrato com IHasWeight </summary>

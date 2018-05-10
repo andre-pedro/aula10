@@ -28,7 +28,7 @@
         {
             return $" O Peso total é {Weight};" +
                 $" o nº de items é {BagOfStuff.Count}," +
-                $" a porcentagem que corresponde à mochila é {(BagOfStuff.Weight / Weight) * 100}.";
+                $" a porcentagem que corresponde à mochila é {(BagOfStuff.Weight / Weight):p2}.";
         }
         /// <summary>Construtor, cria nova instância de jogador</summary>
         /// <param name="baseWeight">Peso base do jogador</param>

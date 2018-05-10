@@ -35,7 +35,7 @@ namespace Aula10
 
         public override string ToString()
         {
-            return $"O nº de items {Count} com peso {Weight} e o Preço {Value}";
+            return $"O nº de items {Count} com peso {Weight:f2} e o Preço {Value:c}";
         }
 
         /// <summary>Construtor que cria uma nova instância de mochila</summary>

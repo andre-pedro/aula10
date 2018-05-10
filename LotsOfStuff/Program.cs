@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Text;
 
 namespace Aula10
 {
@@ -14,7 +15,7 @@ namespace Aula10
             // invocar o método TestProject na instância criada
             Program prog = new Program();
             prog.TestProject();
-
+            Console.OutputEncoding = Encoding.UTF8;
         }
 
         /// <summary>Método que testa este projeto</summary>
