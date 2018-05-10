@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace Aula10
 {
@@ -7,7 +7,7 @@ namespace Aula10
     public class Bag : IStuff
     {
         /// <summary>Array que contém os itens da mochila</summary>
-        private ArrayList stuff;
+        private List<IStuff> stuff;
 
         /// <summary>Número de itens na mochila</summary>
         public int StuffCount { get { return stuff.Count; } }
@@ -53,7 +53,7 @@ namespace Aula10
         /// <param name="bagSize">Número máximo de itens que é possível colocar na mochila</param>
         public Bag(int bagSize)
         {
-            stuff = new ArrayList(bagSize);
+            stuff = new List<IStuff>(bagSize);
         }
 
         /// <summary>Colocar um item na mochila</summary>
@@ -75,7 +75,7 @@ namespace Aula10
                 // Senão existir um item no local indicado, "lançar" uma exceção
                 throw new InvalidOperationException("Bag doesn't have that much stuff!");
             }
-            return stuff[index] as IStuff;
+            return stuff[index];
         }
     }
 }
