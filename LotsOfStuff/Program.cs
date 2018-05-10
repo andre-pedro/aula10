@@ -26,38 +26,38 @@ namespace Aula10
             // Instanciar um jogador com 70 quilos
             Player p = new Player(70.0f);
 
-        
+
 
             // Adicionar vários itens à mochila do jogador:
 
             // Pão com 2 dias, 500 gramas
-            p.BagOfStuff.AddThing(new Food(FoodType.Bread, 2, 0.500f));
+            p.BagOfStuff.Add(new Food(FoodType.Bread, 2, 0.500f));
             // 300 gramas de vegetais com 5 dias
-            p.BagOfStuff.AddThing(new Food(FoodType.Vegetables, 5, 0.300f));
+            p.BagOfStuff.Add(new Food(FoodType.Vegetables, 5, 0.300f));
             // Pistola com 1.5kg + 50 gramas por bala, carregada com 10 balas, com um custo de 250€
-            p.BagOfStuff.AddThing(new Gun(1.5f, 0.050f, 10, 250));
+            p.BagOfStuff.Add(new Gun(1.5f, 0.050f, 10, 250));
             // 200 gramas de fruta fresca
-            p.BagOfStuff.AddThing(new Food(FoodType.Fruit, 0, 0.200f));
+            p.BagOfStuff.Add(new Food(FoodType.Fruit, 0, 0.200f));
             // Pistola com 1.0kg + 25 gramas por bala, carregada com 5 balas, com um custo de 125€
-            p.BagOfStuff.AddThing(new Gun(1.0f, 0.025f, 5, 125));
+            p.BagOfStuff.Add(new Gun(1.0f, 0.025f, 5, 125));
 
             // Quantos itens tem o jogador na mochila?
-            Console.WriteLine($"Nº de itens na mochila: {p.BagOfStuff.StuffCount}");
+            Console.WriteLine($"Nº de itens na mochila: {p.BagOfStuff.Count}");
 
             Console.WriteLine($"{p.BagOfStuff}");
 
-            otherBag = new Bag(5);
+            otherBag = new Bag(5)
+            {
+                new Food(FoodType.Bread, 5, 1.0f),
+                new Food(FoodType.Vegetables, 1f, 0.500f)
+            };
 
-            otherBag.AddThing(new Food(FoodType.Bread, 5, 1.0f));
-            otherBag.AddThing(new Food(FoodType.Vegetables, 1f, 0.500f));
-
-            p.BagOfStuff.AddThing(otherBag);
+            p.BagOfStuff.Add(otherBag);
 
             // Percorrer itens na mochila e tentar "imprimir" cada um
-            for (int i = 0; i < p.BagOfStuff.StuffCount; i++)
+            foreach (IStuff aThing in p.BagOfStuff)
             {
-                IStuff aThing = p.BagOfStuff.GetThing(i);
-                Console.WriteLine(aThing);
+                Console.WriteLine($"\t=> {aThing}");
                 if (aThing is Gun)
                     (aThing as Gun).Shoot();
             }
