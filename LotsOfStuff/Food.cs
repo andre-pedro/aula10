@@ -9,7 +9,7 @@
         /// <summary> Tipo de comida (propriedade read-only) </summary>
         public FoodType Type { get; }
 
-        //Kek
+        //Override
         public override string ToString()
         {
             return $"Dias: {days}, Peso: {Weight}, Tipo: {Type}";

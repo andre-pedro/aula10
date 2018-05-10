@@ -3,7 +3,7 @@
 namespace Aula10
 {
     /// <summary>Classe que representa uma mochila ou saco que contem itens</summary>
-    public class Bag
+    public class Bag : IStuff
     {
         /// <summary>Array que contém os itens da mochila</summary>
         private IStuff[] stuff;

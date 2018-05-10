@@ -20,12 +20,15 @@ namespace Aula10
         /// <summary>Método que testa este projeto</summary>
         private void TestProject()
         {
+
+            Bag otherBag;
+
             // Instanciar um jogador com 70 quilos
             Player p = new Player(70.0f);
 
-            //
+        
+
             // Adicionar vários itens à mochila do jogador:
-            //
 
             // Pão com 2 dias, 500 gramas
             p.BagOfStuff.AddThing(new Food(FoodType.Bread, 2, 0.500f));
@@ -43,13 +46,23 @@ namespace Aula10
 
             Console.WriteLine($"{p.BagOfStuff}");
 
+            otherBag = new Bag(5);
+
+            otherBag.AddThing(new Food(FoodType.Bread, 5, 1.0f));
+            otherBag.AddThing(new Food(FoodType.Vegetables, 1f, 0.500f));
+
+            p.BagOfStuff.AddThing(otherBag);
+
             // Percorrer itens na mochila e tentar "imprimir" cada um
             for (int i = 0; i < p.BagOfStuff.StuffCount; i++)
             {
                 IStuff aThing = p.BagOfStuff.GetThing(i);
                 Console.WriteLine(aThing);
+                if (aThing is Gun)
+                    (aThing as Gun).Shoot();
             }
-
+            Console.WriteLine($"O Total é: {p.BagOfStuff}");
         }
+
     }
 }
