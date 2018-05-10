@@ -25,6 +25,7 @@ namespace Aula10
 
             // Instanciar um jogador com 70 quilos
             Player p = new Player(70.0f);
+            Console.WriteLine(p);
 
 
 
@@ -62,6 +63,7 @@ namespace Aula10
                     (aThing as Gun).Shoot();
             }
             Console.WriteLine($"O Total é: {p.BagOfStuff}");
+            Console.WriteLine(p);
         }
 
     }

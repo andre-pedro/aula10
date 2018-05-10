@@ -14,14 +14,22 @@
         public Bag BagOfStuff { get; }
 
         /// <summary> Propriedade Weight respeita o contrato com IHasWeight </summary>
-        public float Weight {
+        public float Weight
+        {
             get
             {
                 // Seria porreiro adicionar o peso de todas as coisas no saco
-                return baseWeight;
+                return baseWeight + BagOfStuff.Weight;
             }
         }
 
+
+        public override string ToString()
+        {
+            return $" O Peso total é {Weight};" +
+                $" o nº de items é {BagOfStuff.Count}," +
+                $" a porcentagem que corresponde à mochila é {(BagOfStuff.Weight / Weight) * 100}.";
+        }
         /// <summary>Construtor, cria nova instância de jogador</summary>
         /// <param name="baseWeight">Peso base do jogador</param>
         public Player(float baseWeight)
