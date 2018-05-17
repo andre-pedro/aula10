@@ -68,6 +68,14 @@ namespace Aula10
             Console.WriteLine("A Bag do Player contém Guns? " + p.BagOfStuff.ContainsItemOfType<Gun>());
             Console.WriteLine("A Bag do Player contém Food? " + p.BagOfStuff.ContainsItemOfType<Food>());
             Console.WriteLine("A Bag do Player contém Bags? " + p.BagOfStuff.ContainsItemOfType<Bag>());
+
+            foreach (Food f in p.BagOfStuff.GetItemsOfType<Food>())
+            {
+                Console.WriteLine(f);
+            }
+
+
+
         }
 
     }
