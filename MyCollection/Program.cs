@@ -29,11 +29,6 @@ namespace Aula10
                 Console.WriteLine(i);
             foreach (float f in g3f)
                 Console.WriteLine(f);
-
-
-
-
-
         }
     }
 }

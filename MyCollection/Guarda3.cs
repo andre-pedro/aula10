@@ -59,6 +59,16 @@ namespace Aula10
         {
             return GetEnumerator();
         }
+
+        public void Add(T item)
+        {
+            if (v1.Equals(default(T)))
+                v1 = item;
+            else if (v2.Equals(default(T)))
+                v2 = item;
+            else if (v3.Equals(default(T)))
+                v3 = item;
+        }
     }
 
 }
