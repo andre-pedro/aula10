@@ -1,7 +1,7 @@
 ﻿namespace Aula10
 {
     /// <summary>Esta classe representa um jogador num jogo</summary>
-    public class Player : IHasWeight
+    public class Player : IHasWeight, IHasKarma
     {
 
         /// <summary>Máximo de items na mochila (variável de classe, constante, implicitamente static)</summary>
@@ -12,6 +12,14 @@
 
         /// <summary>Mochila de itens do jogador (variável de instância)</summary>
         public Bag BagOfStuff { get; }
+
+        public float Karma
+        {
+            get
+            {
+                return BagOfStuff.Karma;
+            }
+        }
 
         /// <summary> Propriedade Weight respeita o contrato com IHasWeight </summary>
         public float Weight
@@ -28,7 +36,7 @@
         {
             return $" O Peso total é {Weight};" +
                 $" o nº de items é {BagOfStuff.Count}," +
-                $" a porcentagem que corresponde à mochila é {(BagOfStuff.Weight / Weight):p2}.";
+                $" a porcentagem que corresponde à mochila é {(BagOfStuff.Weight / Weight):p2} (Karma={Karma}).";
         }
         /// <summary>Construtor, cria nova instância de jogador</summary>
         /// <param name="baseWeight">Peso base do jogador</param>

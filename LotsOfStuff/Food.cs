@@ -1,7 +1,7 @@
 ﻿namespace Aula10
 {
     /// <summary>Classe que define um pedaço de comida</summary>
-    public class Food : IStuff
+    public class Food : ItemWithKarma, IStuff
     {
         /// <summary> Dias que a comida tem (variável de instância)</summary>
         private float days;

@@ -1,7 +1,7 @@
 ﻿namespace Aula10
 {
     /// <summary>Classe que define uma pistola</summary>
-    public class Gun : IStuff
+    public class Gun : ItemWithKarma, IStuff
     {
         /// <summary> Peso base (variável de instância read-only)</summary>
         private readonly float baseWeight;
@@ -18,7 +18,7 @@
         //Kek
         public override string ToString()
         {
-            return $"Peso base: {baseWeight:f2}, Peso das balas: {bulletWeight:f2}, Preço: {Value:c}";
+            return $"Peso base: {baseWeight:f2}, Peso das balas: {bulletWeight:f2}, Preço: {Value:c}. (Karma = {Karma:f2})";
         }
 
         /// <summary> Propriedade Weight respeita o contrato com IHasWeight </summary>
