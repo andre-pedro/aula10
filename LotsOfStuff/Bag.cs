@@ -97,5 +97,80 @@ namespace Aula10
         }
 
 
+        //aula13
+
+        public void GetHeavier1(out Food food, out Gun gun)
+        {
+            food = null; gun = null;
+            foreach (IStuff stuff in this)
+            {
+                if (stuff is food)
+                {
+                    if ((food == null) || (stuff.Weight > food.Weight))
+                    {
+                        food = stuff as Food;
+                    }
+
+                    else if (stuff is Gun {
+                        if ((gun == null) || (stuff.Weight > gun.Weight))
+                            gun = stuff as Gun;
+                    }
+
+                }
+
+                public FoodAndGun GetHeavier2()
+                {
+                    Food food = null;
+                    Gun gun = null;
+
+
+                    foreach (IStuff Stuff in this)
+                    {
+                        if (stuff is food)
+                        {
+                            if ((food == null) || (stuff.Weight > food.Weight))
+                            {
+                                food = stuff as Food;
+                            }
+
+                            else if (stuff is Gun {
+                                if ((gun == null) || (stuff.Weight > gun.Weight))
+                                    gun = stuff as Gun;
+                            }
+
+                        }
+                    }
+
+                    return new FoodAndGun(food, gun);
+
+                }
+
+                public Tuple<Food, Gun> GetHeavier3()
+                {
+                    Food food = null;
+                    Gun gun = null;
+
+                    foreach (IStuff stuff in this)
+                    {
+                        if (stuff is food)
+                        {
+                            if ((food == null) || (stuff.Weight > food.Weight))
+                            {
+                                food = stuff as Food;
+                            }
+
+                            else if (stuff is Gun {
+                                if ((gun == null) || (stuff.Weight > gun.Weight))
+                                    gun = stuff as Gun;
+                            }
+
+                        }
+
+                    }
+
+                }
+            }
+        }
     }
 }
+

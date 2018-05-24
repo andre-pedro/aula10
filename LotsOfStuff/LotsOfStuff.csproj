@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Bag.cs" />
     <Compile Include="Food.cs" />
+    <Compile Include="FoodAndGun.cs" />
     <Compile Include="FoodType.cs" />
     <Compile Include="Gun.cs" />
     <Compile Include="IHasKarma.cs" />

@@ -37,7 +37,7 @@ namespace Aula10
             // 300 gramas de vegetais com 5 dias
             p.BagOfStuff.Add(new Food(FoodType.Vegetables, 5, 0.300f));
             // Pistola com 1.5kg + 50 gramas por bala, carregada com 10 balas, com um custo de 250€
-            p.BagOfStuff.Add(new Gun(1.5f, 0.050f, 10, 250));
+            p.BagOfStuff.Add(new Gun(baseWeight: 1.5f, bulletWeight: 0.050f, numberOfBullets: 10, value: 250));
             // 200 gramas de fruta fresca
             p.BagOfStuff.Add(new Food(FoodType.Fruit, 0, 0.200f));
             // Pistola com 1.0kg + 25 gramas por bala, carregada com 5 balas, com um custo de 125€
@@ -78,6 +78,33 @@ namespace Aula10
             {
                 Console.WriteLine(g);
             }
+
+            Food food = null;
+            Gun gun = null;
+
+            //ex1
+
+            p.BagOfStuff.GetHeavier1(out food, out gun);
+            Console.WriteLine("Mais Pesados:");
+            Console.WriteLine(food);
+            Console.WriteLine(gun);
+
+            //ex2
+
+            FoodAndGun fag = p.BagOfStuff.GetHeavier2()
+            Console.WriteLine("Mais Pesados 3");
+            Console.WriteLine(fag.Food);
+            Console.WriteLine(fag.Gun);
+
+
+            //ex3
+
+            Tuple<Food, Gun> ex3 = p.BagOfStuff.GetHeavier3()
+            Console.WriteLine("Mais Pesados 3");
+            Console.WriteLine(ex3.Item1);
+            Console.WriteLine(ex3.Item2);
+
+
 
 
         }
